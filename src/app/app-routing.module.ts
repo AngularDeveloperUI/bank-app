@@ -1,12 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountsComponent } from './accounts/accounts.component';
+import { BillpayComponent } from './billpay/billpay.component';
+import { CardsComponent } from './cards/cards.component';
+import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { LoansComponent } from './loans/loans.component';
+import { LoginComponent } from './login/login.component';
+import { MutualFundsComponent } from './mutual-funds/mutual-funds.component';
+import { OffersComponent } from './offers/offers.component';
 
 
 const routes: Routes = [
-  // {
-  //   path: 'accounts',
-  //   loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule)
-  // },
+  {path: 'login', component: LoginComponent},
+  {path: 'accounts', component: AccountsComponent},
+  {path: 'FundsTransfer', component: FundTransferComponent},
+  {path: 'BillPay&Recharge', component: BillpayComponent},
+  {path: 'Cards', component: CardsComponent},
+  {path: 'MutualFunds', component: MutualFundsComponent},
+  {path: 'Insurance', component: InsuranceComponent},
+   {path: 'Loans', component: LoansComponent},
+    {path: 'Offers', component: OffersComponent},
   {
     path: '',
     redirectTo: '',

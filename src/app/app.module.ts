@@ -18,6 +18,8 @@ import { InsuranceComponent } from './insurance/insurance.component';
 import { LoansComponent } from './loans/loans.component';
 import { OffersComponent } from './offers/offers.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { LeftNavComponent } from './left-nav/left-nav.component';
     BrowserAnimationsModule,
     MaterialExampleModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     MaterialExampleModule

@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'bank-app';
   flag: boolean = false;
+  loginFlag(value: boolean) {
+    this.flag = value;
+  }
+  logout(value: boolean) {
+    this.flag = !value;
+  }
 }
