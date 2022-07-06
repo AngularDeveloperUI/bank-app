@@ -10,6 +10,9 @@
             <button mat-button routerLink="/Loans" class="example-spacer" matTooltip="Loans">Loans</button>
             <button mat-button routerLink="/Offers" class="example-spacer" matTooltip="Offers">Offers</button>
             <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon matTooltip="log off" (click)="logout()">login</mat-icon>
+            </button>
         </mat-toolbar-row>
     </mat-toolbar>
 </div>

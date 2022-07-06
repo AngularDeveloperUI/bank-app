@@ -1,18 +1,18 @@
-<div class="bg-col">
+<div class="bg-col" >
   <app-header class="fixed-top"></app-header>
-  <div>
-    <app-primary-nav></app-primary-nav>
+  <div *ngIf="flag">
+    <app-primary-nav (loggedOff)="logout($event)"></app-primary-nav>
   </div>
   <div class="row mx-4 mt-4">
-    <div class="col-10 container" *ngIf="flag">
-        <app-login></app-login>
+    <div class="col-10 container" *ngIf="!flag">
+        <app-login (loggedIn)="loginFlag($event)"></app-login>
     </div>
-    <div class="col-3 container">
+    <div class="col-3 container" *ngIf="flag">
       <app-left-nav></app-left-nav>
   </div>
-  <div class="col-9 container">
+  <div class="col-9 container" *ngIf="flag">
     <mat-card class="mb-2">
-      <app-accounts></app-accounts>
+      <!-- <app-accounts></app-accounts> -->
       <router-outlet></router-outlet>
     </mat-card>
 </div>  
