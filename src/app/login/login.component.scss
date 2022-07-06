@@ -61,7 +61,7 @@ input.example-right-align {
   padding: 0.75em 0.75em 0 0.75em !important;
   width: 320px !important;
 }
-
-.mat-card-actions {
-  margin-left: 217px !important;
+.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child {
+  margin-left: 20px !important;
+  margin-right: -4px !important;
 }

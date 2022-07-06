@@ -1,10 +1,19 @@
 <div class="bg-col">
   <app-header></app-header>
-  <app-primary-nav class="col-fixed" *ngIf="flag"></app-primary-nav>
-  <div class="row mx-4 mt-4" *ngIf="!flag">
-    <div class="col-10 container">
+  <app-primary-nav class="col-fixed"></app-primary-nav>
+  <div class="row mx-4 mt-4">
+    <div class="col-10 container" *ngIf="flag">
         <app-login></app-login>
     </div>
+    <div class="col-3 container">
+      <app-left-nav></app-left-nav>
+  </div>
+  <div class="col-9 container">
+    <mat-card>
+      <app-accounts></app-accounts>
+      <router-outlet></router-outlet>
+    </mat-card>
+</div>
   </div>
   <app-footer class="bottom-fixed"></app-footer>
 </div>
