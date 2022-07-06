@@ -1,6 +1,8 @@
 <div class="bg-col">
-  <app-header></app-header>
-  <app-primary-nav class="col-fixed"></app-primary-nav>
+  <app-header class="fixed-top"></app-header>
+  <div>
+    <app-primary-nav></app-primary-nav>
+  </div>
   <div class="row mx-4 mt-4">
     <div class="col-10 container" *ngIf="flag">
         <app-login></app-login>
@@ -9,11 +11,12 @@
       <app-left-nav></app-left-nav>
   </div>
   <div class="col-9 container">
-    <mat-card>
+    <mat-card class="mb-2">
       <app-accounts></app-accounts>
       <router-outlet></router-outlet>
     </mat-card>
-</div>
+</div>  
   </div>
+  <div class="row" style="margin-top: 50px"><p></p></div>
   <app-footer class="bottom-fixed"></app-footer>
 </div>

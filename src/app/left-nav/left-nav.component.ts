@@ -39,7 +39,7 @@ const TREE_DATA: FoodNode[] = [
       },
       {
         name: 'Orange',
-        children: [{name: 'SMART Slips'}, {name: 'Carrots'}],
+        children: [{name: 'SMART Slips'}, {name: 'Retrieve MMID'}],
       },
     ],
   },
@@ -47,12 +47,12 @@ const TREE_DATA: FoodNode[] = [
     name: 'Request',
     children: [
       {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
+        name: 'View Account Balance',
+        children: [{name: 'A/c Statement - Last 5 Years'}, {name: 'A/c Statement - Last 5 Years'}],
       },
       {
-        name: 'Orange',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        name: 'SMART Slips',
+        children: [{name: 'Retrieve MMID'}, {name: 'View Account Balance'}],
       },
     ],
   },
