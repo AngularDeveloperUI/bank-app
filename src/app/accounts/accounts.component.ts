@@ -15,7 +15,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 const CURRENT_DATA: PeriodicElement[] = [
-  {accountNo: 5607654321, branch: 'Hyderabad, Telangana',  name: 'NT Ramarao', availableBalance: 15000},
+  {accountNo: 5607654321, branch: 'Amaravathi, Andhra Pradesh',  name: 'NT Ramarao', availableBalance: 15000},
 ];
 
 @Component({
