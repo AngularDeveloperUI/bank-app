@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,6 +12,10 @@ export class CommonService {
   ) { }
 
   getUserData(): Observable<any> {
-    return this.hc.get('http://jsonblob.com/api/994296099481337856');
+    return this.hc.get('http://jsonblob.com/api/994296099481337856',
+    {
+        headers: new HttpHeaders()
+            .set('Accept', 'aplication/json')
+    });
   }
 }

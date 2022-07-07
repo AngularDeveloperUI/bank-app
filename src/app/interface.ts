@@ -3,10 +3,10 @@ export interface userData {
     password: string;
     branch: string;
     accountNum: number;
-    balance: number;
+    accountBalance: number;
     address: object;
     ifsCode: string;
-    statement: [];
+    miniStatement: [];
     loans: [];
     offers: [];
     name: string;
