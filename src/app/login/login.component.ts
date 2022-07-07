@@ -36,14 +36,105 @@ export class LoginComponent implements OnInit {
     //   this.data = data;
     //   console.log(data);
     // })
+
     this.data = [
       {
         "customerId": "123456",
-        "password": "12345678"
+        "password": "123456",
+        "name": "Jagadeesh Jorepalli",
+        "accountNum": "5647856798765456",
+        "ifsCode": "RPBB000789",
+        "branch": "Hyderabad, Telangana",
+        "address": {
+          "hNo": "1-24",
+          "street": "Balaji street",
+          "city": "Hyderabad",
+          "district": "Hyderabad",
+          "state": "Telanagana",
+          "pinCode": "500019"
+        },
+        "accountBalance": "300145",
+        "loans": [
+          {
+            "loanNo": "3425678",
+            "loanAmount": "300000",
+            "tenure": "60",
+            "emi": "6659"
+          },
+          {
+            "loanNo": "3426589",
+            "loanAmount": "600000",
+            "tenure": "60",
+            "emi": "13045"
+          }
+        ],
+        "offers": [],
+        "miniStatement": [
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          },
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          },
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          }
+        ]
       },
       {
-        "customerId": "rajapathipati@gmail.com",
-        "password": "12345678"
+        "customerId": "654321",
+        "password": "654321",
+        "name": "Pathipati Rajesh",
+        "accountNum": "5647856798765456",
+        "ifsCode": "RPBB000789",
+        "branch": "Nellore, Andhra Pradesh",
+        "address": {
+          "hNo": "1-24",
+          "street": "Balaji street",
+          "city": "Hyderabad",
+          "district": "Hyderabad",
+          "state": "Telanagana",
+          "pinCode": "500019"
+        },
+        "accountBalance": "300145",
+        "loans": [
+          {
+            "loanNo": "3425678",
+            "loanAmount": "300000",
+            "tenure": "60",
+            "emi": "6659"
+          },
+          {
+            "loanNo": "3426589",
+            "loanAmount": "600000",
+            "tenure": "60",
+            "emi": "13045"
+          }
+        ],
+        "offers": [],
+        "miniStatement": [
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          },
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          },
+          {
+            "date": "2/6/2022",
+            "amount": "2000",
+            "status": "received"
+          }
+        ]
       }
     ];
   }
@@ -61,18 +152,21 @@ export class LoginComponent implements OnInit {
     }
     this.loading = true;
     console.log(this.data);
-    let currentData = {};
+    let currentData;
     this.data.forEach((element: userData) => {
       if (element.customerId === this.f.username.value &&
         element.password === this.f.password.value) {
         currentData = element;
+        console.log(currentData,"current")
       }
     });
     console.log(currentData);
-    if (currentData !== {}) {
+    if (currentData !== undefined || currentData !== null) {
+      console.log(currentData);
       this.loading = false;
       this.loggedIn.emit(true);
       this.router.navigate(['/accounts']);
+      sessionStorage.setItem("currentData", JSON.stringify(currentData));
     }
   }
 }
