@@ -95,18 +95,21 @@ export class LoginComponent implements OnInit {
         "miniStatement": [
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 2000,
+            "status": "Credited",
+            "narration": "EMI 12096 Chq S12096997120969978"
           },
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0087739"
           },
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 25000,
+            "status": "Debited",
+            "narration": "Madhu-paytmq50101utmzi"
           }
         ]
       },
@@ -165,18 +168,21 @@ export class LoginComponent implements OnInit {
         "miniStatement": [
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 7800,
+            "status": "Credited",
+            "narration": "paytmq50101utmzi"
           },
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 5400,
+            "status": "Debited",
+            "narration": "Madhu-paytm"
           },
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 4300,
+            "status": "Credited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0"
           }
         ]
       }
