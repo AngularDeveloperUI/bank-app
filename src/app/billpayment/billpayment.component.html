@@ -36,13 +36,8 @@
             </div>
         </form>
     </mat-step>
-<<<<<<< HEAD
-    <mat-step [stepControl]="thirdFormGroup" label="Enter Amount"  required>
-        <form [formGroup]="thirdFormGroup">
-=======
     <mat-step [stepControl]="thirdFormGroup" label="Enter Amount">
         <form [formGroup]="thirdFormGroup" (ngSubmit)="onPayment(thirdFormGroup)">
->>>>>>> 0821cb40fa90fb35d11f9fbd9c2ab46dba57d5a2
             <mat-form-field appearance="fill">
                 <mat-label>Amount: </mat-label>
                 <input matInput formControlName="amount" placeholder="Enter Valid Amount" required>
@@ -53,13 +48,8 @@
             </div>
         </form>
     </mat-step>
-<<<<<<< HEAD
-    <mat-step [stepControl]="fourFormGroup" label="Payment" required>
-        <form [formGroup]="fourFormGroup">
-=======
     <mat-step [stepControl]="fourFormGroup" label="Payment">
         <form [formGroup]="fourFormGroup" (ngSubmit)="onRecharge(fourFormGroup)">
->>>>>>> 0821cb40fa90fb35d11f9fbd9c2ab46dba57d5a2
             <mat-form-field appearance="fill">
                 <mat-label>Choose Credit/Debit Card</mat-label>
                 <mat-select formControlName="cardNum" placeholder="Payment Method" required>
