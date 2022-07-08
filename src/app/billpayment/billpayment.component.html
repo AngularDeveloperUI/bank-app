@@ -1,0 +1,75 @@
+<h2>Mobile Recharge</h2>
+<mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+    <mat-step [stepControl]="firstFormGroup" label="Enter phone number">
+        <form [formGroup]="firstFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="favoriteSeason" formControlName="firstCtrl" required>
+                    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                        {{season}}
+                    </mat-radio-button>
+                </mat-radio-group>
+                <input class="mt-4" matInput placeholder="Prepaid Mobile Number" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Operator/Circle">
+        <form [formGroup]="secondFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose Operator</mat-label>
+                <mat-select formControlName="secondCtrl" required>
+                    <mat-option value="option1">Airtel Prepaid</mat-option>
+                    <mat-option value="option2">Jio Prepaid</mat-option>
+                    <mat-option value="option3">MTNL Mumbai Prepaid</mat-option>
+                    <mat-option value="option1">V/I Prepaid</mat-option>
+                    <mat-option value="option2">Idea Prepaid</mat-option>
+                    <mat-option value="option1">Vodafone Prepaid</mat-option>
+                </mat-select>
+                <!-- <input matInput formControlName="secondCtrl" placeholder="Ex. Jio/Airtel/Idea" required> -->
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Enter Amount">
+        <form [formGroup]="thirdFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-label>Amount: </mat-label>
+                <input matInput formControlName="thirdCtrl" placeholder="Enter Valid Amount" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="fourFormGroup" label="Payment">
+        <form [formGroup]="fourFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose Credit/Debit Card</mat-label>
+                <mat-select formControlName="fourCtrl" placeholder="Payment Method" required>
+                    <mat-option value="option1"> Credit Card - 5607 **** **** **90</mat-option>
+                    <mat-option value="option2">Debit Card - 7865 **** **** **23</mat-option>
+                    <mat-option value="option3">UPI - jk9009009888@ybl</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter 4 DIgit Pin Code: </mat-label>
+                <input matInput type="password" formControlName="fifthCtrl" placeholder="Enter Valid Pin Code" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Recharge</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>Recharge Successful!</p>
+    </mat-step>
+</mat-stepper>

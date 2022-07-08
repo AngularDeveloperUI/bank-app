@@ -42,7 +42,13 @@ export class LoginComponent implements OnInit {
         "customerId": "123456",
         "password": "123456",
         "name": "Jagadeesh Jorepalli",
-        "accountNum": "5647856798765456",
+        "accounts":[{
+           "accType":"Saving",
+            "accountBalance": "300145"
+        },{
+           "accType":"Current",
+            "accountBalance": "300145"
+        }],
         "ifsCode": "RPBB000789",
         "branch": "Hyderabad, Telangana",
         "address": {
@@ -53,7 +59,18 @@ export class LoginComponent implements OnInit {
           "state": "Telanagana",
           "pinCode": "500019"
         },
-        "accountBalance": "300145",
+     
+     "cards": [
+         {
+             "cardType": "Debit",
+             "cardNum": "7867567567698911",
+             "cardPin": "1234"
+         },{
+           "cardType": "Credit",
+             "cardNum": "6789327897998119",
+             "cardPin": "1234"  
+         }
+         ],
         "loans": [
           {
             "loanNo": "3425678",
@@ -91,7 +108,13 @@ export class LoginComponent implements OnInit {
         "customerId": "654321",
         "password": "654321",
         "name": "Pathipati Rajesh",
-        "accountNum": "5647856798765456",
+         "accounts":[{
+           "accType":"Saving",
+            "accountBalance": "32321"
+        },{
+           "accType":"Current",
+            "accountBalance": "300145"
+        }],
         "ifsCode": "RPBB000789",
         "branch": "Nellore, Andhra Pradesh",
         "address": {
@@ -102,7 +125,17 @@ export class LoginComponent implements OnInit {
           "state": "Telanagana",
           "pinCode": "500019"
         },
-        "accountBalance": "300145",
+         "cards": [
+         {
+             "cardType": "Debit",
+             "cardNum": "0967567567698911",
+             "cardPin": "1234"
+         },{
+           "cardType": "Credit",
+             "cardNum": "3489327897998119",
+             "cardPin": "1234"  
+         }
+         ],
         "loans": [
           {
             "loanNo": "3425678",
@@ -161,12 +194,13 @@ export class LoginComponent implements OnInit {
       }
     });
     console.log(currentData);
-    if (currentData !== undefined || currentData !== null) {
+    if (currentData !== undefined) {
       console.log(currentData);
-      this.loading = false;
+      //this.loading = false;
       this.loggedIn.emit(true);
       this.router.navigate(['/accounts']);
       sessionStorage.setItem("currentData", JSON.stringify(currentData));
+
     }
   }
 }
