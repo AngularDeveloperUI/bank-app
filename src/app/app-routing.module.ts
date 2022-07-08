@@ -17,12 +17,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'accounts', component: AccountsComponent },
   {
-    path: 'FundsTransfer', component: FundTransferComponent,
-    children: [
-      {
-        path: 'Statement',
-        component: StatementsComponent, pathMatch: 'full'
-      }],
+    path: 'FundsTransfer', component: StatementsComponent,
+    // children: [
+    //   {
+    //     path: 'Statement',
+    //     component: StatementsComponent, pathMatch: 'full'
+    //   }],
   },
   {
     path: 'BillPay&Recharge', component: BillpayComponent,

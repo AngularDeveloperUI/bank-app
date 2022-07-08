@@ -46,13 +46,14 @@ export class LoginComponent implements OnInit {
         "accountNum":"766866457812",
         "accounts":[{
            "accType":"Saving",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         },{
            "accType":"Current",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         }],
         "ifsCode": "RPBB000789",
         "branch": "Hyderabad, Telangana",
+        "pin":1234,
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",
@@ -72,9 +73,9 @@ export class LoginComponent implements OnInit {
              "cardNum": "6789327897998119",
              "cardPin": "1234",
              "cardStatus":'active',
-             "unbilledBalance":"25000",
-             "availableCredit":"35000",
-             "statementBalance":"14600"  
+             "unbilledBalance":25000,
+             "availableCredit":35000,
+             "statementBalance":14600  
          }
          ],
         "loans": [
@@ -117,13 +118,14 @@ export class LoginComponent implements OnInit {
         "accountNum":"766866457813",
          "accounts":[{
            "accType":"Saving",
-            "accountBalance": "32321"
+            "accountBalance": 32321
         },{
            "accType":"Current",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         }],
         "ifsCode": "RPBB000789",
         "branch": "Nellore, Andhra Pradesh",
+        "pin":1234,
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",
@@ -142,9 +144,9 @@ export class LoginComponent implements OnInit {
              "cardNum": "3489327897998119",
              "cardPin": "1234",
              "cardStatus":'active',
-             "unbilledBalance":"25000",
-             "availableCredit":"35000",
-             "statementBalance":"14600"  
+             "unbilledBalance":25000,
+             "availableCredit":35000,
+             "statementBalance":14600  
          }
          ],
         "loans": [
