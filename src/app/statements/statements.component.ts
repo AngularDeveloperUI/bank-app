@@ -11,19 +11,22 @@ export class StatementsComponent implements OnInit {
   formGroup: FormGroup;
   titleAlert: string = 'This field is required';
   post: any = '';
-
+  userData:any;
+  parsedData:any;
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.createForm();
+    this.userData = sessionStorage.getItem('currentData')
+    this.parsedData = JSON.parse(this.userData);
   }
 
   createForm() {
     this.formGroup = this.formBuilder.group({
-      'accountNum': [null, [Validators.required, Validators.maxLength(12)]],
+      'accountNum': [null, [Validators.required, Validators.maxLength(12),Validators.minLength(12)]],
       'name': [null, Validators.required],
       'pin': [null, [Validators.required, Validators.minLength(4), Validators.maxLength(6)]],
-      'description': [null, [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
+      'amount': [null, [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
     });
   }
 
@@ -41,9 +44,22 @@ export class StatementsComponent implements OnInit {
   getErrorPassword() {
     return this.formGroup.controls['pin'].hasError('required') ? 'Field is required' : '';
   }
-
+  
   onSubmit(post: any) {
-    this.post = 'Payment Transfered Successful!';
+    console.log(post)
+    if(this.parsedData.pin === post.pin) {
+    if(this.parsedData.accounts[0].accountBalance > post.amount) {
+      this.parsedData.accounts[0].accountBalance = this.parsedData.accounts[0].accountBalance - post.amount;
+      this.parsedData.miniStatement.unshift({date: new Date(), amount: post.amount, status: 'Debited'})
+      sessionStorage.setItem("currentData", JSON.stringify(this.parsedData));
+      this.post = 'Payment Transfered Successful!';
+    } else {
+      alert('There is no sufficient Balnace to transfer');
+    }
+  } else {
+    alert('Please Eneter Valid pin');
+  }
+    
   }
 
 }
