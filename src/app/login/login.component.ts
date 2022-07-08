@@ -70,7 +70,11 @@ export class LoginComponent implements OnInit {
          },{
            "cardType": "Credit",
              "cardNum": "6789327897998119",
-             "cardPin": "1234"  
+             "cardPin": "1234",
+             "cardStatus":'active',
+             "unbilledBalance":"25000",
+             "availableCredit":"35000",
+             "statementBalance":"14600"  
          }
          ],
         "loans": [
@@ -136,7 +140,11 @@ export class LoginComponent implements OnInit {
          },{
            "cardType": "Credit",
              "cardNum": "3489327897998119",
-             "cardPin": "1234"  
+             "cardPin": "1234",
+             "cardStatus":'active',
+             "unbilledBalance":"25000",
+             "availableCredit":"35000",
+             "statementBalance":"14600"  
          }
          ],
         "loans": [

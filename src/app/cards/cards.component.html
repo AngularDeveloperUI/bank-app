@@ -21,7 +21,7 @@
                     <!-- Position Column -->
                     <ng-container matColumnDef="cardNo">
                         <th mat-header-cell *matHeaderCellDef>Card No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.cardNo}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.cardNum}} </td>
                     </ng-container>
 
                     <!-- Name Column -->
@@ -33,7 +33,7 @@
                     <!-- Weight Column -->
                     <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef>Name</th>
-                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        <td mat-cell *matCellDef="let element"> {{parsedData.name}} </td>
                     </ng-container>
 
                     <!-- Symbol Column -->

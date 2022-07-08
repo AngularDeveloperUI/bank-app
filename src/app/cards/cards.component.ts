@@ -12,9 +12,9 @@ export interface PeriodicElement {
 /**
  * @title Basic use of `<table mat-table>`
  */
- const ELEMENT_DATA: PeriodicElement[] = [
-  {cardNo: 12345542432, cardType: 'VISA PLAT MONEYBACK CARD DOM',  name: 'YS Jagan', unbilledBalance: 25000, availableCredit: 35000, statementBalance: 14600},
-];
+//  const ELEMENT_DATA: PeriodicElement[] = [
+//   {cardNo: 12345542432, cardType: 'VISA PLAT MONEYBACK CARD DOM',  name: 'YS Jagan', unbilledBalance: 25000, availableCredit: 35000, statementBalance: 14600},
+// ];
 
 const CURRENT_DATA: PeriodicElement[] = [
   {cardNo: 43414141443432, cardType: 'VISA PLAT MONEYBACK INTL',  name: 'YS Jagan', unbilledBalance: 0.00, availableCredit:100000, statementBalance: 0},
@@ -27,8 +27,7 @@ const CURRENT_DATA: PeriodicElement[] = [
 })
 export class CardsComponent implements OnInit {
   displayedColumns: string[] = ['cardNo', 'cardType', 'name', 'unbilledBalance', 'availableCredit', 'statementBalance'];
-  dataSource = ELEMENT_DATA;
-  dataSourc = CURRENT_DATA;
+  
   step = 0;
 
   setStep(index: number) {
@@ -43,8 +42,20 @@ export class CardsComponent implements OnInit {
     this.step--;
   }
   constructor() { }
-
+  userData:any;
+  parsedData:any;
+  cardsData:any;
+  dataSource:any;
+  dataSourc:any;
+  ELEMENT_DATA:any;
   ngOnInit(): void {
+    this.userData = sessionStorage.getItem('currentData')
+    this.parsedData = JSON.parse(this.userData);
+    this.cardsData = this.parsedData.cards
+    this.ELEMENT_DATA = [this.cardsData[1]]
+    console.log(this.ELEMENT_DATA,'card data')
+    this.dataSource = this.ELEMENT_DATA;
+    this.dataSourc = CURRENT_DATA;
   }
 
 }
