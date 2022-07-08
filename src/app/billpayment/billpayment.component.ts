@@ -54,10 +54,12 @@ export class BillpaymentComponent {
     this.cardsData.forEach((element: any) => {
       if(form.value.cardNum === element.cardNum) {
         if(form.value.password === element.cardPin){
-           this.rechargeStatus = true
+           this.rechargeStatus = true 
+           if(element.cardType ==='Debit') {
            this.parsedData.accounts[0].accountBalance = this.parsedData.accounts[0].accountBalance-this.rechargedAmount
            this.parsedData.accounts[1].accountBalance = this.parsedData.accounts[1].accountBalance-this.rechargedAmount
            sessionStorage.setItem("currentData", JSON.stringify(this.parsedData))
+           }
         } else{
           alert('Please enter Valid Pin....');
           this.rechargeStatus = false

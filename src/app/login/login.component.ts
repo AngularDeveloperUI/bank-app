@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     // redirect to home if already logged in
   }
   ngOnInit(): void {
+   // sessionStorage.setItem("currentData", JSON.stringify({}));
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -205,6 +206,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       alert('Please enter valid user name and password.')
+      sessionStorage.setItem("currentData", JSON.stringify({}) );
     }
   }
 }
