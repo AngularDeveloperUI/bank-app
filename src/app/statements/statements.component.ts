@@ -49,8 +49,13 @@ export class StatementsComponent implements OnInit {
     console.log(post)
     if(this.parsedData.pin === post.pin) {
     if(this.parsedData.accounts[0].accountBalance > post.amount) {
+      var today = new Date();
+            var year = today.getFullYear();
+            var mes = today.getMonth() + 1;
+            var dia = today.getDate();
+            var fecha = dia + "/" + mes + "/" + year;
       this.parsedData.accounts[0].accountBalance = this.parsedData.accounts[0].accountBalance - post.amount;
-      this.parsedData.miniStatement.unshift({date: new Date(), amount: post.amount, status: 'Debited'})
+      this.parsedData.miniStatement.unshift({date: fecha,narration:`Transferred to ac no ${post.accountNum}`, amount: post.amount, status: 'Debited'})
       sessionStorage.setItem("currentData", JSON.stringify(this.parsedData));
       this.post = 'Payment Transfered Successful!';
     } else {

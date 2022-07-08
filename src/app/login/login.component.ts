@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     // this.commonService.getUserData().subscribe((data) => {
-    //   this.data = data;
+    //  // this.data = data;
+    //   console.log(data,'data from service');
     // })
 
     this.data = [
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
         }],
         "ifsCode": "RPBB000789",
         "branch": "Hyderabad, Telangana",
-        "pin":1234,
+        "pin":"1234",
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",
@@ -139,7 +140,7 @@ export class LoginComponent implements OnInit {
         }],
         "ifsCode": "RPBB000789",
         "branch": "Nellore, Andhra Pradesh",
-        "pin":1234,
+        "pin":"1234",
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",

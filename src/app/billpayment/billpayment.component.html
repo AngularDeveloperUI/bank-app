@@ -3,12 +3,12 @@
     <mat-step [stepControl]="firstFormGroup" label="Enter phone number" required>
         <form [formGroup]="firstFormGroup">
             <mat-form-field appearance="fill">
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                <!-- <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
                     [(ngModel)]="favoriteSeason" formControlName="firstCtrl" required>
                     <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
                         {{season}}
                     </mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> -->
                 <input class="mt-4" matInput placeholder="Mobile Number" formControlName="firstCtrl" required>
             </mat-form-field>
             <div>
