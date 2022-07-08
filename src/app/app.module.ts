@@ -20,6 +20,7 @@ import { OffersComponent } from './offers/offers.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BillpaymentComponent } from './billpayment/billpayment.component';
+import { StatementsComponent } from './statements/statements.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BillpaymentComponent } from './billpayment/billpayment.component';
     LoansComponent,
     OffersComponent,
     LeftNavComponent,
-    BillpaymentComponent
+    BillpaymentComponent,
+    StatementsComponent
   ],
   imports: [
     BrowserModule,
