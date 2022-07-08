@@ -1,1 +1,36 @@
-<p>mutual-funds works!</p>
+<cdk-accordion class="example-accordion">
+    <cdk-accordion-item style="width: 171%"
+      *ngFor="let item of items; let index = index;"
+      #accordionItem="cdkAccordionItem"
+      class="example-accordion-item"
+      role="button"
+      tabindex="0"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index">
+      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        {{ item }}
+        <span class="example-accordion-item-description">
+          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+        </span>
+      </div>
+      <div
+        class="example-accordion-item-body"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index">
+        <pre>In case you are not registered for Online Mutual Fund A/C and you wish to register, please follow the below path.
+            Request --> Open Mutual Fund (ISA) Account.</pre>
+<pre>Only Resident HDFC Bank Account Holders under Individual category can apply for ISA.
+    ISA shall be opened under single holding pattern only in first holder’s name.</pre>     </div>
+    </cdk-accordion-item>
+  </cdk-accordion>
+  
+  
+<mat-card><a href="#"><img style="width: 100%" src="../../assets/mutual-fund.jpg"/></a></mat-card>
+<strong>
+  <marquee width="100%" direction="left" height="30%">
+      Linking PAN with Aadhaar is mandatory! To avoid the restrictions on certain banking transactions and high TDS/TCS, please link your PAN with Aadhar. Know More.
+      </marquee>
+</strong>

@@ -8,14 +8,10 @@ import { Observable } from 'rxjs';
 export class CommonService {
 
   constructor(
-    private hc: HttpClient,
+    private httpClient: HttpClient,
   ) { }
 
   getUserData(): Observable<any> {
-    return this.hc.get('http://jsonblob.com/api/994296099481337856',
-    {
-        headers: new HttpHeaders()
-            .set('Accept', 'aplication/json')
-    });
+    return this.httpClient.get('http://jsonblob.com/api/994296099481337856', { withCredentials: true });
   }
 }
