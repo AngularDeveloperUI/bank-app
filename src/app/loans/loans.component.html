@@ -4,3 +4,20 @@
         Linking PAN with Aadhaar is mandatory! To avoid the restrictions on certain banking transactions and high TDS/TCS, please link your PAN with Aadhar. Know More.
         </marquee>
 </strong>
+<table class="table  loan-table">
+    <thead>
+        <th class="loan-head">Loan Number</th>            
+        <th class="loan-head">Loan Amount</th>            
+        <th class="loan-head">Tenure</th>   
+        <th class="loan-head">Emi</th>         
+    </thead>
+    <tbody>
+    <tr  *ngFor="let loan of parsedData.loans"  scope="row">
+        <td class="loan">{{loan.loanNo}}</td>
+        <td class="loan">{{loan.loanAmount}}</td>
+        <td class="loan">{{loan.tenure}}</td>
+        <td class="loan">{{loan.emi}}</td>
+    </tr>
+</tbody>
+
+</table>

@@ -1,0 +1,21 @@
+.loan-table{
+    width: 70%;
+    margin-left:auto; 
+    margin-right:auto;
+    text-align: center;
+    border: 1px solid;
+    .loan{
+        height: 50px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: lighter;
+        border: 1px solid;
+    }
+    .loan-head{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px;
+        border: 1px solid;
+    }
+}
