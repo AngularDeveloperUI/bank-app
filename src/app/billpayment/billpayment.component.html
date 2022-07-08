@@ -1,6 +1,6 @@
 <h2>Mobile Recharge</h2>
 <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
-    <mat-step [stepControl]="firstFormGroup" label="Enter phone number">
+    <mat-step [stepControl]="firstFormGroup" label="Enter phone number" required>
         <form [formGroup]="firstFormGroup">
             <mat-form-field appearance="fill">
                 <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
@@ -16,7 +16,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Operator/Circle">
+    <mat-step [stepControl]="secondFormGroup" label="Operator/Circle"  required>
         <form [formGroup]="secondFormGroup">
             <mat-form-field appearance="fill">
                 <mat-label>Choose Operator</mat-label>
