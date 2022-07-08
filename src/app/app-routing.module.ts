@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   { path: 'Cards', component: CardsComponent },
   { path: 'MutualFunds', component: MutualFundsComponent },
-  { path: 'Insurance', component: InsuranceComponent },
+  { path: 'MiniStatement', component: InsuranceComponent },
   { path: 'Loans', component: LoansComponent },
   { path: 'Offers', component: OffersComponent },
   {
