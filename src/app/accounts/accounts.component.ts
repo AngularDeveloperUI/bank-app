@@ -30,8 +30,6 @@ export class AccountsComponent implements OnInit {
   ngOnInit(): void {
     this.userData = sessionStorage.getItem('currentData')
     this.parsedData = JSON.parse(this.userData);
-    console.log(this.userData);
-    console.log(this.parsedData);
     this.ELEMENT_DATA = [
       { accountNo: this.parsedData.accountNum, branch: this.parsedData.branch, name: this.parsedData.name, availableBalance: this.parsedData.accounts[0].accountBalance },
     ];
