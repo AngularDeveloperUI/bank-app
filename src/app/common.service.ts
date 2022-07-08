@@ -12,6 +12,6 @@ export class CommonService {
   ) { }
 
   getUserData(): Observable<any> {
-    return this.httpClient.get('http://jsonblob.com/api/994296099481337856', { withCredentials: true });
+    return this.httpClient.get('http://jsonblob.com/api/995053639601242112');
   }
 }

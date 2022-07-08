@@ -9,17 +9,6 @@ export interface PeriodicElement {
   statementBalance: number;
 }
 
-/**
- * @title Basic use of `<table mat-table>`
- */
-//  const ELEMENT_DATA: PeriodicElement[] = [
-//   {cardNo: 12345542432, cardType: 'VISA PLAT MONEYBACK CARD DOM',  name: 'YS Jagan', unbilledBalance: 25000, availableCredit: 35000, statementBalance: 14600},
-// ];
-
-const CURRENT_DATA: PeriodicElement[] = [
-  {cardNo: 43414141443432, cardType: 'VISA PLAT MONEYBACK INTL',  name: 'YS Jagan', unbilledBalance: 0.00, availableCredit:100000, statementBalance: 0},
-];
-
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
