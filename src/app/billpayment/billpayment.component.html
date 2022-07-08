@@ -9,10 +9,10 @@
                         {{season}}
                     </mat-radio-button>
                 </mat-radio-group>
-                <input class="mt-4" matInput placeholder="Prepaid Mobile Number" formControlName="firstCtrl" required>
+                <input class="mt-4" matInput placeholder="Mobile Number" formControlName="firstCtrl" required>
             </mat-form-field>
             <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext [disabled]="firstFormGroup.invalid">Next</button>
             </div>
         </form>
     </mat-step>
@@ -32,7 +32,7 @@
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext [disabled]=" firstFormGroup.invalid ||secondFormGroup.invalid">Next</button>
             </div>
         </form>
     </mat-step>
@@ -44,7 +44,7 @@
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext [disabled]=" firstFormGroup.invalid ||secondFormGroup.invalid || thirdFormGroup.invalid ">Next</button>
             </div>
         </form>
     </mat-step>
@@ -66,7 +66,7 @@
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext *ngIf="fourFormGroup.valid">Recharge</button>
+                <button mat-button matStepperNext [disabled]="fourFormGroup.invalid || firstFormGroup.invalid ||secondFormGroup.invalid || thirdFormGroup.invalid">Recharge</button>
             </div>
         </form>
     </mat-step>

@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     // redirect to home if already logged in
   }
   ngOnInit(): void {
+   // sessionStorage.setItem("currentData", JSON.stringify({}));
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -69,7 +70,11 @@ export class LoginComponent implements OnInit {
          },{
            "cardType": "Credit",
              "cardNum": "6789327897998119",
-             "cardPin": "1234"  
+             "cardPin": "1234",
+             "cardStatus":'active',
+             "unbilledBalance":"25000",
+             "availableCredit":"35000",
+             "statementBalance":"14600"  
          }
          ],
         "loans": [
@@ -135,7 +140,11 @@ export class LoginComponent implements OnInit {
          },{
            "cardType": "Credit",
              "cardNum": "3489327897998119",
-             "cardPin": "1234"  
+             "cardPin": "1234",
+             "cardStatus":'active',
+             "unbilledBalance":"25000",
+             "availableCredit":"35000",
+             "statementBalance":"14600"  
          }
          ],
         "loans": [
@@ -205,6 +214,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       alert('Please enter valid user name and password.')
+      sessionStorage.setItem("currentData", JSON.stringify({}) );
     }
   }
 }
