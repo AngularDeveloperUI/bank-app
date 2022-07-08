@@ -7,10 +7,10 @@
     <div class="col-10 container" *ngIf="!flag">
         <app-login (loggedIn)="loginFlag($event)"></app-login>
     </div>
-    <div class="col-3 container" *ngIf="flag">
+    <!-- <div class="col-3 container" *ngIf="flag">
       <app-left-nav></app-left-nav>
-  </div>
-  <div class="col-9 container" *ngIf="flag">
+  </div> -->
+  <div class="col-12 container" *ngIf="flag">
     <mat-card class="mb-2">
       <!-- <app-accounts></app-accounts> -->
       <router-outlet></router-outlet>

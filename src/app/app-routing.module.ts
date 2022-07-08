@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountsComponent } from './accounts/accounts.component';
 import { BillpayComponent } from './billpay/billpay.component';
+import { BillpaymentComponent } from './billpayment/billpayment.component';
 import { CardsComponent } from './cards/cards.component';
 import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
 import { InsuranceComponent } from './insurance/insurance.component';
@@ -15,7 +16,14 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'accounts', component: AccountsComponent},
   {path: 'FundsTransfer', component: FundTransferComponent},
-  {path: 'BillPay&Recharge', component: BillpayComponent},
+  {path: 'BillPay&Recharge', component: BillpayComponent, 
+  children: [
+    {
+      path: 'BillPayment',
+      component: BillpaymentComponent, pathMatch: 'full'
+    }],
+
+},
   {path: 'Cards', component: CardsComponent},
   {path: 'MutualFunds', component: MutualFundsComponent},
   {path: 'Insurance', component: InsuranceComponent},
