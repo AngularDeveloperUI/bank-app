@@ -1,1 +1,53 @@
-<p>statements works!</p>
+<mat-toolbar color="primary">
+    <span class="fill-remaining-space">Online Money Transfer</span>
+  </mat-toolbar>
+  
+  <div class="container" *ngIf="!post; else forminfo" novalidate> 
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Enter Account Number:" formControlName="accountNum">
+        <mat-error *ngIf="!formGroup.controls['accountNum'].valid && formGroup.controls['accountNum'].touched">
+          {{ getErrorEmail() }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Re-Enter Account Number:" formControlName="accountNum">
+        <mat-error *ngIf="!formGroup.controls['accountNum'].valid && formGroup.controls['accountNum'].touched">
+          {{ getErrorEmail() }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Enter IFSC Code:" formControlName="name">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Enter Amount:"  formControlName="description"/>
+        <mat-error *ngIf="!formGroup.controls['description'].valid && formGroup.controls['description'].touched">
+          Required field.
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Enter Secret Pin Code:" formControlName="pin">
+        <mat-error *ngIf="!formGroup.controls['pin'].valid && formGroup.controls['pin'].touched">
+          {{ getErrorPassword() }}
+        </mat-error>
+      </mat-form-field>
+  
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+      </div>
+  
+    </form>
+  </div>
+  
+  <ng-template #forminfo>
+    <div class="container">
+      {{ post }}
+    </div>
+  </ng-template>
