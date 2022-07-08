@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fund-transfer.component.scss']
 })
 export class FundTransferComponent implements OnInit {
-
+  onHide: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onClick() {
+    this.onHide = false;
+  }
 }

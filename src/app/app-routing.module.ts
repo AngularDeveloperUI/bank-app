@@ -10,25 +10,34 @@ import { LoansComponent } from './loans/loans.component';
 import { LoginComponent } from './login/login.component';
 import { MutualFundsComponent } from './mutual-funds/mutual-funds.component';
 import { OffersComponent } from './offers/offers.component';
+import { StatementsComponent } from './statements/statements.component';
 
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'accounts', component: AccountsComponent},
-  {path: 'FundsTransfer', component: FundTransferComponent},
-  {path: 'BillPay&Recharge', component: BillpayComponent, 
-  children: [
-    {
-      path: 'BillPayment',
-      component: BillpaymentComponent, pathMatch: 'full'
-    }],
+  { path: 'login', component: LoginComponent },
+  { path: 'accounts', component: AccountsComponent },
+  {
+    path: 'FundsTransfer', component: FundTransferComponent,
+    children: [
+      {
+        path: 'Statement',
+        component: StatementsComponent, pathMatch: 'full'
+      }],
+  },
+  {
+    path: 'BillPay&Recharge', component: BillpayComponent,
+    children: [
+      {
+        path: 'BillPayment',
+        component: BillpaymentComponent, pathMatch: 'full'
+      }],
 
-},
-  {path: 'Cards', component: CardsComponent},
-  {path: 'MutualFunds', component: MutualFundsComponent},
-  {path: 'Insurance', component: InsuranceComponent},
-   {path: 'Loans', component: LoansComponent},
-    {path: 'Offers', component: OffersComponent},
+  },
+  { path: 'Cards', component: CardsComponent },
+  { path: 'MutualFunds', component: MutualFundsComponent },
+  { path: 'Insurance', component: InsuranceComponent },
+  { path: 'Loans', component: LoansComponent },
+  { path: 'Offers', component: OffersComponent },
   {
     path: '',
     redirectTo: '',

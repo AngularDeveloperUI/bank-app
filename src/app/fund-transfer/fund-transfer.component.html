@@ -4,6 +4,10 @@
         Linking PAN with Aadhaar is mandatory! To avoid the restrictions on certain banking transactions and high TDS/TCS, please link your PAN with Aadhar. Know More.
         </marquee>
 </strong>
+<div *ngIf="!onHide">
+    <router-outlet></router-outlet>
+</div>
+<div  *ngIf="onHide">
 <mat-card><a href="#"><img style="width: 100%" src="../../assets/fund-transfer.jpg" /></a></mat-card>
 <div class="mt-4">
     <strong>
@@ -23,7 +27,7 @@
             </a>
                 <button mat-button color="primary">View Demo</button>
             <mat-card-actions>
-                <button mat-raised-button color="primary">GO</button>
+                <button mat-raised-button color="primary" (click)="onClick()"  routerLink="/FundsTransfer/Statement">GO</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -38,7 +42,7 @@
             </a>
                 <button mat-button color="primary">View Demo</button>
             <mat-card-actions>
-                <button mat-raised-button color="primary">GO</button>
+                <button mat-raised-button color="primary" (click)="onClick()"  routerLink="/FundsTransfer/Statement">GO</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -54,7 +58,7 @@
             </a>
                 <button mat-button color="primary">View Demo</button>
             <mat-card-actions>
-                <button mat-raised-button color="primary">GO</button>
+                <button mat-raised-button color="primary" (click)="onClick()"  routerLink="/FundsTransfer/Statement">GO</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -69,7 +73,7 @@
             </a>
                 <button mat-button color="primary">View Demo</button>
             <mat-card-actions>
-                <button mat-raised-button color="primary">GO</button>
+                <button mat-raised-button color="primary" (click)="onClick()"  routerLink="/FundsTransfer/Statement">GO</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -84,7 +88,7 @@
             </a>
                 <button mat-button color="primary">View Demo</button>
             <mat-card-actions>
-                <button mat-raised-button color="primary">GO</button>
+                <button mat-raised-button color="primary" (click)="onClick()"  routerLink="/FundsTransfer/Statement">GO</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -116,3 +120,4 @@
         CardPay,</mat-list-item>
     <mat-list-item> Third Party DD and eCMS. To know more about TPT, please to know more.</mat-list-item>
 </mat-list>
+</div>
