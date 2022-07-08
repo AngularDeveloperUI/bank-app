@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class LoansComponent implements OnInit {
 
   constructor() { }
-
+  userData:any;
+  parsedData:any
   ngOnInit(): void {
+    this.userData = sessionStorage.getItem('currentData')
+    this.parsedData = JSON.parse(this.userData);
   }
 
 }

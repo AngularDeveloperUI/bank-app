@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
         "customerId": "123456",
         "password": "123456",
         "name": "Jagadeesh Jorepalli",
+        "accountNum":"766866457812",
         "accounts":[{
            "accType":"Saving",
             "accountBalance": "300145"
@@ -108,6 +109,7 @@ export class LoginComponent implements OnInit {
         "customerId": "654321",
         "password": "654321",
         "name": "Pathipati Rajesh",
+        "accountNum":"766866457813",
          "accounts":[{
            "accType":"Saving",
             "accountBalance": "32321"
@@ -183,7 +185,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.loading = true;
+   // this.loading = true;
     console.log(this.data);
     let currentData;
     this.data.forEach((element: userData) => {
@@ -201,6 +203,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/accounts']);
       sessionStorage.setItem("currentData", JSON.stringify(currentData));
 
+    } else {
+      alert('Please enter valid user name and password.')
     }
   }
 }

@@ -10,13 +10,8 @@ export interface PeriodicElement {
 /**
  * @title Basic use of `<table mat-table>`
  */
-const ELEMENT_DATA: PeriodicElement[] = [
-  { accountNo: 5607123111, branch: 'Hyderabad, Telangana', name: 'Super star Rajini Kanth', availableBalance: 25000 },
-];
 
-const CURRENT_DATA: PeriodicElement[] = [
-  { accountNo: 5607654321, branch: 'Amaravathi, Andhra Pradesh', name: 'NT Ramarao', availableBalance: 15000 },
-];
+ 
 
 @Component({
   selector: 'app-accounts',
@@ -25,8 +20,10 @@ const CURRENT_DATA: PeriodicElement[] = [
 })
 export class AccountsComponent implements OnInit {
   displayedColumns: string[] = ['accountNo', 'branch', 'name', 'availableBalance'];
-  dataSource = ELEMENT_DATA;
-  dataSourc = CURRENT_DATA;
+  ELEMENT_DATA:any
+  CURRENT_DATA:any
+  dataSource:any;
+  dataSourc:any
   parsedData: any;
   constructor() { }
   userData: any;
@@ -35,7 +32,14 @@ export class AccountsComponent implements OnInit {
     this.parsedData = JSON.parse(this.userData);
     console.log(this.userData);
     console.log(this.parsedData);
-
+    this.ELEMENT_DATA = [
+      { accountNo: this.parsedData.accountNum, branch: this.parsedData.branch, name: this.parsedData.name, availableBalance: this.parsedData.accounts[0].accountBalance },
+    ];
+    this.CURRENT_DATA = [
+      { accountNo: this.parsedData.accountNum, branch: this.parsedData.branch, name: this.parsedData.name, availableBalance: this.parsedData.accounts[1].accountBalance },
+    ];
+    this.dataSource = this.ELEMENT_DATA;
+  this.dataSourc = this.CURRENT_DATA;
   }
 
 
