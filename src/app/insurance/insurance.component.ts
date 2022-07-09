@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
+
 export interface PeriodicElement {
   narration: string;
   date: string;
@@ -32,7 +33,7 @@ export class InsuranceComponent implements OnInit {
     this.ELEMENT_DATA = this.parsedData.miniStatement;
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
   }
-  actions = ['One Week', 'One Month', 'Three Months'];
+  actions = ['All','One Week', 'One Month', 'Three Months'];
   onChange(event: any) {
     if (event.value === 'One Week') {
       let date1 = new Date();
@@ -48,24 +49,28 @@ export class InsuranceComponent implements OnInit {
       let fromDate = date2.toLocaleDateString();
       let toDate = d.toLocaleDateString();
       this.filterData(fromDate, toDate);
-    } else {
+    } else if (event.value === 'Three Months'){
       let d = new Date();
       d.setMonth(d.getMonth() - 3);
       let toDate = d.toLocaleDateString();
       let date2 = new Date();
       let fromDate = date2.toLocaleDateString();
       this.filterData(fromDate, toDate);
+    } else {
+      this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     }
   }
 
   filterData(startDate: any, endDate: any) {
+    let filterArray: any[] = []
     this.ELEMENT_DATA.forEach((a: any) => {
-      let date = new Date(a.date);
-      let d = date.toLocaleDateString();
-      console.log(d, 'dsddddddddd', startDate, endDate);
-      if (d >= startDate && d <= endDate) {
-        console.log(date, "mowa");
+      let d = new Date(a.date);
+      let endDate1 = new Date(endDate);
+      let startDate1 = new Date(startDate);
+      if (d <= startDate1 && d >= endDate1) {
+        filterArray.push(a)
       }
+      this.dataSource = new MatTableDataSource(filterArray)
     });
 
   }

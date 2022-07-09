@@ -50,7 +50,6 @@ export class BillpaymentComponent {
     this.rechargedAmount = form.value.amount
   }
   onRecharge(form: any) {
-    console.log(form.value);
     if(this.parsedData.accounts[0].accountBalance > this.rechargedAmount) {
     this.cardsData.forEach((element: any) => {
       if (form.value.cardNum === element.cardNum) {
@@ -61,7 +60,7 @@ export class BillpaymentComponent {
             var year = today.getFullYear();
             var mes = today.getMonth() + 1;
             var dia = today.getDate();
-            var fecha = dia + "/" + mes + "/" + year;
+            var fecha = mes + "/" + dia  + "/" + year;
             this.parsedData.accounts[0].accountBalance = this.parsedData.accounts[0].accountBalance - this.rechargedAmount
             this.parsedData.accounts[1].accountBalance = this.parsedData.accounts[1].accountBalance - this.rechargedAmount
             this.parsedData.miniStatement.unshift({ date: fecha, narration: 'Mobile recharge ', amount: this.rechargedAmount, status: 'Debited' })
