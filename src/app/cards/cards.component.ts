@@ -43,7 +43,6 @@ export class CardsComponent implements OnInit {
     this.parsedData = JSON.parse(this.userData);
     this.cardsData = this.parsedData.cards
     this.ELEMENT_DATA = [this.cardsData[1]]
-    console.log(this.ELEMENT_DATA,'card data')
     this.dataSource = this.ELEMENT_DATA;
     this.CURRENT_DATA= [
       {cardNo: 43414141443432, cardType: 'VISA PLAT MONEYBACK INTL',  name: this.parsedData.name, unbilledBalance: 0.00, availableCredit:100000, statementBalance: 0},
