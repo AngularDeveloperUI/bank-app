@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     // this.commonService.getUserData().subscribe((data) => {
-    //   this.data = data;
-    //   console.log(data);
+    //  // this.data = data;
+    //   console.log(data,'data from service');
     // })
 
     this.data = [
@@ -46,13 +46,14 @@ export class LoginComponent implements OnInit {
         "accountNum":"766866457812",
         "accounts":[{
            "accType":"Saving",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         },{
            "accType":"Current",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         }],
         "ifsCode": "RPBB000789",
         "branch": "Hyderabad, Telangana",
+        "pin":"1234",
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",
@@ -72,9 +73,9 @@ export class LoginComponent implements OnInit {
              "cardNum": "6789327897998119",
              "cardPin": "1234",
              "cardStatus":'active',
-             "unbilledBalance":"25000",
-             "availableCredit":"35000",
-             "statementBalance":"14600"  
+             "unbilledBalance":25000,
+             "availableCredit":35000,
+             "statementBalance":14600  
          }
          ],
         "loans": [
@@ -94,20 +95,35 @@ export class LoginComponent implements OnInit {
         "offers": [],
         "miniStatement": [
           {
-            "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "date": "4/6/2022",
+            "amount": 2000,
+            "status": "Credited",
+            "narration": "EMI 12096 Chq S12096997120969978"
           },
           {
-            "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "date": "6/6/2022",
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0087739"
           },
           {
-            "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
-          }
+            "date": "5/6/2022",
+            "amount": 25000,
+            "status": "Debited",
+            "narration": "Madhu-paytmq50101utmzi"
+          },
+          {
+            "date": "4/7/2022",
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0087739"
+          },
+          {
+            "date": "2/8/2022",
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UP-ybl-SBIN0087739"
+          },
         ]
       },
       {
@@ -117,13 +133,14 @@ export class LoginComponent implements OnInit {
         "accountNum":"766866457813",
          "accounts":[{
            "accType":"Saving",
-            "accountBalance": "32321"
+            "accountBalance": 32321
         },{
            "accType":"Current",
-            "accountBalance": "300145"
+            "accountBalance": 300145
         }],
         "ifsCode": "RPBB000789",
         "branch": "Nellore, Andhra Pradesh",
+        "pin":"1234",
         "address": {
           "hNo": "1-24",
           "street": "Balaji street",
@@ -142,9 +159,9 @@ export class LoginComponent implements OnInit {
              "cardNum": "3489327897998119",
              "cardPin": "1234",
              "cardStatus":'active',
-             "unbilledBalance":"25000",
-             "availableCredit":"35000",
-             "statementBalance":"14600"  
+             "unbilledBalance":25000,
+             "availableCredit":35000,
+             "statementBalance":14600  
          }
          ],
         "loans": [
@@ -165,19 +182,33 @@ export class LoginComponent implements OnInit {
         "miniStatement": [
           {
             "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "amount": 7800,
+            "status": "Credited",
+            "narration": "paytmq50101utmzi"
           },
           {
-            "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
+            "date": "2/24/2022",
+            "amount": 5400,
+            "status": "Debited",
+            "narration": "Madhu-paytm"
           },
           {
-            "date": "2/6/2022",
-            "amount": "2000",
-            "status": "received"
-          }
+            "date": "1/6/2022",
+            "amount": 4300,
+            "status": "Credited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0"
+          }, {
+            "date": "5/7/2022",
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UPI-BALLEPALLI MANOJK37@ybl-SBIN0087739"
+          },
+          {
+            "date": "4/11/2022",
+            "amount": 7000,
+            "status": "Debited",
+            "narration": "UP-ybl-SBIN0087739"
+          },
         ]
       }
     ];
@@ -188,25 +219,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.f.username.value, this.f.password.value)
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
    // this.loading = true;
-    console.log(this.data);
     let currentData;
     this.data.forEach((element: userData) => {
       if (element.customerId === this.f.username.value &&
         element.password === this.f.password.value) {
         currentData = element;
-        console.log(currentData,"current")
       }
     });
-    console.log(currentData);
     if (currentData !== undefined) {
-      console.log(currentData);
       //this.loading = false;
       this.loggedIn.emit(true);
       this.router.navigate(['/accounts']);
